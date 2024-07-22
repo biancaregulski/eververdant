@@ -1,9 +1,14 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>W3.CSS Template</title>
+    <title>eververdant</title>
+
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+    <link rel="manifest" href="/site.webmanifest" />
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css" />
     <link
       rel="stylesheet"
@@ -29,12 +34,22 @@
       }
       html {
         height: 100%;
-        background-color: #fcfaf5;
+        background-color: #fbfcf5;
+      }
+      .site-content {
+        padding: 3em;
+        max-width: 800px;
+        margin: auto;
       }
       .display-container {
-        padding: 3em;
-        width: 56%;
-        margin: auto;
+        width: 100%;
+      }
+      .title-content {
+        margin-bottom: 3em;
+      }
+      .title {
+        display: flex;
+        justify-content: center;
       }
       .header-links {
         display: flex;
@@ -56,66 +71,115 @@
       .main-content {
         width: 100%;
       }
-      .book-image {
-        height: 180px;
+      .books {
+        display: flex;
+        padding: 10px 0;
+        width: 100%;
+        white-space: nowrap;
       }
-      .welcome {
-        padding: 30px 0;
+      .book-image {
+        height: auto;
+        max-width: calc(
+          100% / 6
+        ); /* Adjust the divisor based on the number of images */
+
+        flex: 1 1 auto;
+      }
+      @media (max-width: 600px) {
+        .books {
+          overflow-x: scroll;
+          -webkit-mask-image: linear-gradient(
+            90deg,
+            rgba(0, 0, 0, 0) 0%,
+            rgba(0, 0, 0, 1) 8%,
+            rgba(0, 0, 0, 1) 92%,
+            rgba(0, 0, 0, 0) 100%
+          );
+          mask-image: linear-gradient(
+            90deg,
+            rgba(0, 0, 0, 0) 0%,
+            rgba(0, 0, 0, 1) 8%,
+            rgba(0, 0, 0, 1) 92%,
+            rgba(0, 0, 0, 0) 100%
+          );
+        }
+        .book-image {
+          max-width: 100px;
+        }
+      }
+      hr {
+        margin: 30px 0;
+        border-top: 1px solid #e1e1e1;
       }
     </style>
   </head>
   <body>
-    <div class="display-container">
-      <div class="header-links">
-        <h3><a href="">About</a></h3>
-        <h3><a href="https://eververdant.substack.com/">Writing</a></h3>
-      </div>
-
-      <div class="main-content">
-        <hr class="w3-border-grey" style="margin: auto; width: 40%" />
-        <div class="welcome">
-          <h4>Welcome</h4>
-          <p>
-            I am interested in many things, including history (esp. medieval and
-            early modern), anthropology, philosophy, painting, and music (esp.
-            folk and baroque). I live around Boston, MA.
-          </p>
-          <p>Some of my favorite books:</p>
-          <img
-            class="book-image"
-            src="https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1328826802i/6968772.jpg"
-          />
-          <img
-            class="book-image"
-            src="https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1348981362i/120549.jpg"
-          />
-          <img
-            class="book-image"
-            src="https://m.media-amazon.com/images/I/71Bh+cJGDGL._AC_UF1000,1000_QL80_.jpg"
-          />
-          <img
-            class="book-image"
-            src="https://m.media-amazon.com/images/I/61iKTeGQSdL._AC_UF1000,1000_QL80_.jpg"
-          />
-          <img
-            class="book-image"
-            src="https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1370325181i/32081.jpg"
-          />
-          <img
-            class="book-image"
-            src="https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1349091198i/344611.jpg"
-          />
+    <div class="site-content">
+      <div class="display-container">
+        <div class="title-content">
+          <h2 class="title">eververdant</h2>
+          <hr style="margin: auto; width: 30%" />
         </div>
-        <div class="contact">
-          <h5>Contact</h5>
-          <p>eververdant@protonmail.com</p>
-          <p><a href="https://x.com/ever_verdant">Twitter</a></p>
-          <p>
-            <a href="https://www.goodreads.com/user/show/23017207-eververdant"
+        <div class="main-content">
+          <div class="welcome">
+            <h5>Welcome</h5>
+            <p>
+              I write
+              <a target="_blank" href="https://eververdant.substack.com/"
+                >essays</a
+              >
+              tangentially related to history (esp. late medieval and 19th
+              century), philosophy, language, aesthetics, and music. I live
+              around Boston, MA.
+            </p>
+            <p>A few of my favorite books:</p>
+            <div class="books">
+              <img
+                class="book-image"
+                src="https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1348981362i/120549.jpg"
+              />
+              <img
+                class="book-image"
+                src="https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1328826802i/6968772.jpg"
+              />
+              <img
+                class="book-image"
+                src="https://m.media-amazon.com/images/I/71Bh+cJGDGL._AC_UF1000,1000_QL80_.jpg"
+              />
+              <img
+                class="book-image"
+                src="https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1349091198i/344611.jpg"
+              />
+              <img
+                class="book-image"
+                src="https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1370325181i/32081.jpg"
+              />
+              <img
+                class="book-image"
+                src="https://m.media-amazon.com/images/I/61iKTeGQSdL._AC_UF1000,1000_QL80_.jpg"
+              />
+            </div>
+          </div>
+          <hr />
+          <div class="contact">
+            <a target="_blank" href="https://x.com/ever_verdant">Twitter</a>
+            <br />
+
+            <a target="_blank" href="https://eververdant.substack.com/"
+              >Substack</a
+            >
+            <br />
+            <a
+              target="_blank"
+              href="https://www.goodreads.com/user/show/23017207-eververdant"
               >Goodreads</a
             >
-          </p>
-          <p><a href="https://soundcloud.com/hazydaymusic">Soundcloud</a></p>
+            <br />
+            <a target="_blank" href="https://soundcloud.com/hazydaymusic"
+              >Soundcloud</a
+            >
+            <p>Feel free to contact me at eververdant@protonmail.com.</p>
+          </div>
         </div>
       </div>
     </div>
